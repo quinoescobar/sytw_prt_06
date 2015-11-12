@@ -1,17 +1,9 @@
 var express = require('express');
 var router = express.Router();
+var quizController = require('../controllers/quiz_controller');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Quiz' });
-});
-/* GET quiz/question page. */
-router.get('/quiz/question', function(req, res, next) {
-  res.render('quiz/question', { title: 'Quiz' });
-});
-/* GET quiz/answer page. */
-router.get('/quiz/answer', function(req, res, next) {
-  res.render('quiz/answer', { title: 'Quiz' });
-});
+router.get('/', quizController.index);
+router.get('/quizes/question', quizController.question);
+router.get('/quizes/answer', quizController.answer);
 
 module.exports = router;
