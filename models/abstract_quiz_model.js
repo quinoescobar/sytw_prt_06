@@ -12,4 +12,14 @@ AbstractQuiz.prototype.randomQuestion = function() {
     return this.q[index];
 };
 
+AbstractQuiz.prototype.totalQuestions = function () {
+  // body...
+  return this.q.length;
+};
+
+AbstractQuiz.prototype.popQuestion = function (index) {
+  // body...
+  return this.q[index];
+};
+
 module.exports = AbstractQuiz;

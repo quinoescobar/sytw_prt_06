@@ -39,7 +39,7 @@ function Quiz() {
   // insertar unas cuantas preguntas sobre
   // la tabla de multiplicar
   var self  = this;
-  for(var i = 0; i<3;i++) {
+  for(var i = 0; i<5;i++) {
     (function() {
       var n1 = Math.randomInt(9)+1;
       //debug("n1 = "+n1);
