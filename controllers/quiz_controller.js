@@ -4,7 +4,7 @@ var quiz = new Quiz();
 var current = quiz.randomQuestion();
 
 exports.index = function(req, res, next) {
-  debug("Yendo a  index.js:  '/'");
+  // debug("Yendo a  index.js:  '/'");
   res.render('index', { title: 'Quiz' });
 };
 
@@ -17,8 +17,8 @@ exports.question = function(req,res) {
 /* GET quizes/answer page. */
 exports.answer = function(req, res) {
   var c = 'Incorrecto';
-  debug(req.query);
-  debug("current.respuesta(req.query.respuesta) = "+current.respuesta(req.query.respuesta));
+  // debug(req.query);
+  // debug("current.respuesta(req.query.respuesta) = "+current.respuesta(req.query.respuesta));
   if (current.respuesta(req.query.respuesta)) { c = 'Correcto'; }
   res.render('quizes/answer', {respuesta: c});
 };
