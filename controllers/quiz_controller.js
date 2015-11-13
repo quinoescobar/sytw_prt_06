@@ -23,6 +23,15 @@ exports.answer = function(req, res) {
   res.render('quizes/answer', {respuesta: c});
 };
 
+exports.questions = function(req, res){
+  var totalPreguntas = quiz.totalQuestions();
+  var preguntas = new Array(totalPreguntas);
+  for(var i = 0; i < totalPreguntas; i++){
+     preguntas[i] = quiz.popQuestion(i);
+  }
+  res.render('quizes/questions', {lista: preguntas});
+};
+
 exports.popNQuestion = function(req,res){
   current = quiz.popQuestion(req.params.index - 1);
   try {

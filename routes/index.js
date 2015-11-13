@@ -6,7 +6,7 @@ var quizController = require('../controllers/quiz_controller');
 router.get('/', quizController.index);
 router.get('/quizes/question', quizController.question);
 router.get('/quizes/answer', quizController.answer);
-
-router.get('/quizes/question/:index', quizController.popNQuestion);
+router.get('/quizes/questions', quizController.questions);
+router.get('/quizes/questions/:index', quizController.popNQuestion);
 
 module.exports = router;
