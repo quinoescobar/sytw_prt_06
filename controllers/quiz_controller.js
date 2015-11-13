@@ -1,5 +1,5 @@
 var Quiz = require('../models/quiz_model');
-
+var debug = require();
 var quiz = new Quiz();
 var current = quiz.randomQuestion();
 
