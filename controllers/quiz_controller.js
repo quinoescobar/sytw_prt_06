@@ -22,3 +22,13 @@ exports.answer = function(req, res) {
   if (current.respuesta(req.query.respuesta)) { c = 'Correcto'; }
   res.render('quizes/answer', {respuesta: c});
 };
+
+exports.popNQuestion = function(req,res){
+  current = quiz.popQuestion(req.params.index);
+  if(current){
+    res.render('quizes/question', {pregunta: current.pregunta});
+  }else{
+    res.render('error', {message: "No existe esa pregunta, para el index ingresado"});
+  }
+
+};
