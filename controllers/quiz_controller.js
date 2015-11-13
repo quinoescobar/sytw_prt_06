@@ -33,9 +33,12 @@ exports.questions = function(req, res){
 };
 
 exports.popNQuestion = function(req,res){
-  current = quiz.popQuestion(req.params.index - 1);
+  var indice = req.params.index;
+  console.log("indice pasado "+ indice);
+  var pregunta = quiz.q[indice-1];
+   //current= quiz.popQuestion(indice - 1);
   try {
-    res.render('quizes/question', {pregunta: current.pregunta,respuesta: current.respuesta});
+    res.render('quizes/question', {pregunta: pregunta.pregunta});
   } catch (e) {
     res.render('error', {message: "No existe esa pregunta, para el index ingresado ERRoR:  " + e});
   } finally {
